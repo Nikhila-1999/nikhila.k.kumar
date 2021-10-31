@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+ }
+.first {
+    
+     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image/theyam\ \(1\).jpg);
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    background-attachment: fixed;
+}
+h2 {
+    font-size: 250%;
+    word-spacing: 2px;
+
+    text-align: center;
+    margin-bottom: 30px;
+
+    letter-spacing: 1px;
+    display: block;
+    /* font-size: 1.5em; */
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-top: 100px;;
+}
+.row{ 
+     max-width: 1140px; 
+    margin: 0 auto; 
+     display: flex; 
+    flex-wrap: wrap;
+ }
+ .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;}
+ 
+ .long-text {
+    font-size: 135%;
+    text-align: center;
+ }
+ .card:hover {
+    transform: scale(1.1);
+  }
+  .card {
+    transition: transform 0.2s ease;
+  }
+ footer{
+    background-color:grey;
+    color: white;
+
+    text-align: center;
+    height: 11em;
+    margin-top: 10%;
+ }
+ 
