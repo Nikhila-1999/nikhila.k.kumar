@@ -10,7 +10,7 @@
     <style type="text/css">
     .bg{
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image/mohi\ \(2\).jpg);
-    height: 100vh;
+    height: 115vh;
 
     background-size: cover;
     background-position: center;
@@ -19,7 +19,7 @@
     }
     #log{
         /* border: 2px solid white; */
-        padding: -20px 40px;
+        padding: -50px 40px;
         margin-top: 90px;
         /* margin-left: 2px; */
         -webkit-box-shadow: -5px 2px 70px 10px rgba(0,0,0,0.75);
@@ -31,9 +31,37 @@
         text-align: center;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         margin-top: -20px;
-    }
+    } 
     .in{
         padding-top: 2px;
+    }
+    .pw-meter .pw-strength{
+        position: relative;
+        width: 100%;
+        height: 20px;
+        margin-top: 10px;
+        text-align: center;
+        background-color:lightgray;
+        display: none;
+    }
+    .pw-meter .pw-strength span:nth-child(1){
+        position: relative;
+        font-size: 13px;
+        color: #111;
+        z-index: 2;
+        font-weight: 600;
+    }
+    .pw-meter .pw-strength span:nth-child(2){
+        position: absolute;
+        top: 0px;
+        left:0px;
+        width: 0%;
+        height: 100%;
+        border-radius: 2px;
+        z-index: 1;
+        transition: all 300ms ease-in-out;
+        
+
     }
     footer{
     background-color:gray;
@@ -58,46 +86,61 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 col-xs-4"></div>
             <div class="col-md-4 col-sm-12 col-xs-4">
-                <form id="log">
+                <form id="log" action="login.html" onsubmit="return validate()">
                     <h2>Sign Up</h2>
                     <div class="form-group container">
                         <label  style="font-weight: 500; font-size: 17px;">Name</label>
                         <br>
                         
-                        <input type="text" class="form-control" placeholder="name">
+                        <input type="text"  class="form-control" placeholder="name" required>
                         <br>
                     </div>
                     <div class="form-group container">
                         <label style="font-weight: 500; font-size: 17px;">Email</label>
                         <br>
                         
-                        <input type="email" class="form-control" placeholder="email">
+                        <input type="email" id="email"class="form-control" placeholder="email" >
+                        <small id="msg"></small>
                     </div>
                     <br>
                     <div class="form-group container">
                         <label style="font-weight: 500; font-size: 17px;">Phone No</label>
                         <br>
                         
-                        <input type="tel" class="form-control" placeholder="Phone no">
+                        <input type="tel" class="form-control" id="mob" placeholder="Phone no">
+                        <small id="msgph"></small>
                     </div>
                    
                     <br>
-                    <div class="form-group container">
+                    <div class="form-group container pw-meter">
                         <label style="font-weight: 500; font-size: 17px;">Password</label>
                         <br>
                         
-                        <input type="password" class="form-control form-control-sm" placeholder="Password">
+                        <input type="password" class="form-control form-control-sm" id="pass1"placeholder="Password">
+                        <small id=msgpass1></small>
+                        <div class="pw-strength">
+                            <span>week</span>
+                            <span></span>
+                        </div>
+                        
                     </div>
+                    
+                    
                     <br>
                     <div class="form-group container">
                         <label style="font-weight: 500; font-size: 17px;">Re-Password</label>
                         <br>
                         
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password"  id="pass2">
+                        <small id="msgpass2"></small>
+                    </div>
+                    <div class="container checkbox">
+                        <label><input type="checkbox" onclick="myFunction()" id="myInput">show passwords</label>
+
                     </div>
                     <br>
                     <div class="text-center container">
-                        <button type="button" class="btn btn-block btn-success btn-lg  ">Submit</button>
+                        <button type="submit" class="btn btn-block btn-success btn-lg  ">Submit</button>
                     </div>
                     
                 </form>
@@ -106,6 +149,7 @@
         </div>
         
     </div>
+    <script src="sigvalid.js"></script>
     <footer>
         <a href="#" style="color: blue;" ><i class="fab fa-facebook-f"></i> </a>
         
